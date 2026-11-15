@@ -17,7 +17,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%235A0E1C'/%3E%3Ccircle cx='32' cy='32' r='25' fill='none' stroke='%23E6C27A' stroke-width='2'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='24' font-style='italic' text-anchor='middle' fill='%23E6C27A'%3ER%26amp;S%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Pinyon+Script&family=Tiro+Telugu&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Great+Vibes&family=Tiro+Telugu&display=swap">
 <style>
 /* Layout: a single scrolling invitation — temple-door gate, photo hero, paper invitation, maroon save-the-date, arched event cards, photo gallery, blessing footer */
 :root{
@@ -35,7 +35,7 @@
   --kumkum:#8C1C13;
   --navy:#0F1B33;
   --line:rgba(192,138,51,.45);
-  --script:'Pinyon Script', 'Snell Roundhand', 'Apple Chancery', cursive;
+  --script:'Great Vibes', 'Snell Roundhand', 'Apple Chancery', cursive;
   --display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --caps:Cinzel, 'Trajan Pro', Georgia, serif;
   --telugu:'Tiro Telugu', 'Noto Serif Telugu', 'Noto Sans Telugu', 'Telugu Sangam MN', serif;
@@ -72,7 +72,8 @@ a{color:inherit}
 .door.l .knob{right:22px}.door.r .knob{left:22px}
 .gate-top{position:absolute;top:0;left:0;right:0;height:auto;pointer-events:none;z-index:2;transition:opacity .6s}
 .gate-inner{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;color:var(--cream);padding:24px var(--gutter-r) 24px var(--gutter);transition:opacity .6s,transform .6s}
-.seal{width:132px;height:132px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#a8323b,#7a1220 60%,#5a0b16);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.35),inset 0 0 0 6px rgba(0,0,0,.12),inset 0 0 0 9px rgba(230,194,122,.5);color:var(--gold-l);font-family:var(--script);font-size:46px;line-height:1}
+.seal{width:132px;height:132px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#a8323b,#7a1220 60%,#5a0b16);display:flex;align-items:center;justify-content:center;gap:12px;box-shadow:0 10px 30px rgba(0,0,0,.35),inset 0 0 0 6px rgba(0,0,0,.12),inset 0 0 0 9px rgba(230,194,122,.5);color:var(--gold-l);font-family:var(--caps);font-weight:600;font-size:34px;line-height:1}
+.seal i{width:1px;height:46px;background:currentColor;opacity:.7}
 .gate-inner .te{font-size:clamp(40px,9vw,64px);line-height:1.2}
 .gate-inner .names{font-family:var(--script);font-size:clamp(38px,9vw,60px);color:var(--gold-l);line-height:1.1}
 .gate-inner .sub{font-size:13px;letter-spacing:.32em;color:var(--gold-l)}
@@ -190,11 +191,17 @@ section{position:relative}
 
 /* ---------- gallery ---------- */
 .gallery{background:var(--paper)}
-.masonry{columns:3 260px;column-gap:16px}
-.shot{display:block;width:100%;margin:0 0 16px;padding:0;border:0;background:var(--paper-2);border-radius:14px;overflow:hidden;cursor:zoom-in;break-inside:avoid;position:relative}
-.shot img{width:100%;height:auto;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
-.shot:hover img{transform:scale(1.04)}
-.shot.arch{border-radius:999px 999px 14px 14px}
+.moments{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(3,clamp(170px,19vw,232px));gap:14px}
+.shot{position:relative;display:block;margin:0;padding:0;border:0;background:var(--paper-2);border-radius:16px;overflow:hidden;cursor:zoom-in;box-shadow:0 14px 30px -20px rgba(59,7,17,.55)}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.shot:hover img{transform:scale(1.05)}
+.shot.a{grid-column:1/3;grid-row:1/4;border-radius:999px 999px 16px 16px}
+.shot.a::after{content:"";position:absolute;inset:10px;border:1px solid rgba(247,234,208,.7);border-radius:999px 999px 10px 10px;pointer-events:none}
+.shot.b{grid-column:3;grid-row:1/3}
+.shot.c{grid-column:4;grid-row:1}
+.shot.d{grid-column:3;grid-row:3}
+.shot.e{grid-column:4;grid-row:2/4}
+.dots{display:none}
 
 /* lightbox */
 .lb{position:fixed;inset:0;z-index:60;background:rgba(20,3,7,.94);display:flex;align-items:center;justify-content:center;padding:calc(env(safe-area-inset-top,0px) + 56px) 12px calc(env(safe-area-inset-bottom,0px) + 56px)}
@@ -234,10 +241,19 @@ section{position:relative}
   .sd-text .btns{justify-content:center}
   .arch-photo{max-width:320px}
 }
+@media (max-width:760px){
+  .moments{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin-left:calc(-1 * var(--gutter));margin-right:calc(-1 * var(--gutter-r));padding:4px var(--gutter-r) 18px var(--gutter);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .moments::-webkit-scrollbar{display:none}
+  .shot{flex:0 0 76%;max-width:340px;aspect-ratio:3/4;height:auto;scroll-snap-align:center;grid-column:auto;grid-row:auto}
+  .shot.b,.shot.c,.shot.d,.shot.e{grid-column:auto;grid-row:auto}
+  .dots{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:6px}
+  .dots i{width:7px;height:7px;border-radius:50%;background:var(--line);transition:width .3s,background .3s}
+  .dots i.on{width:22px;border-radius:4px;background:var(--maroon)}
+  .swipe{display:block;text-align:center;margin-top:12px;font-size:16px;font-style:italic;color:var(--muted)}
+}
+@media (min-width:761px){.swipe{display:none}}
 @media (max-width:520px){
   .couple{grid-template-columns:1fr;gap:6px}
-  .masonry{columns:2 140px;column-gap:10px}
-  .shot{margin-bottom:10px;border-radius:10px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -300,7 +316,7 @@ section{position:relative}
   <svg class="gate-top" viewBox="0 0 1080 150" preserveAspectRatio="xMidYMin slice" aria-hidden="true"><use href="#tor"/></svg>
   <div class="gate-inner">
     <p class="te" style="font-size:18px;color:var(--gold-l)">శ్రీరస్తు · శుభమస్తు · అవిఘ్నమస్తు</p>
-    <div class="seal" aria-hidden="true">R&amp;S</div>
+    <div class="seal" aria-hidden="true"><span>R</span><i></i><span>S</span></div>
     <p class="te">శుభలేఖ</p>
     <p class="names">Revanth &amp; Sravani</p>
     <p class="caps sub">You are invited</p>
@@ -450,14 +466,15 @@ section{position:relative}
         <h2 class="sec-title rv" id="g-h" style="--d:1">Our moments</h2>
         <svg class="flourish rv" style="--d:2" viewBox="0 0 180 40" aria-hidden="true"><use href="#flr"/></svg>
       </div>
-      <div class="masonry" id="masonry">
-        <button class="shot arch rv" type="button" data-i="0"><img src="assets/img/golden-hour.jpg" alt="Revanth and Sravani embracing in golden evening light" width="1400" height="1867" loading="lazy"></button>
-        <button class="shot rv" type="button" data-i="1"><img src="assets/img/king-station.jpg" alt="Revanth and Sravani on the stairs of King subway station" width="1400" height="2100" loading="lazy"></button>
-        <button class="shot rv" type="button" data-i="2"><img src="assets/img/coffee-date.jpg" alt="Revanth and Sravani sitting together with coffee downtown" width="1400" height="2100" loading="lazy"></button>
-        <button class="shot rv" type="button" data-i="3"><img src="assets/img/golden-walk.jpg" alt="Revanth and Sravani walking hand in hand by the lake at sunset" width="1400" height="2100" loading="lazy"></button>
-        <button class="shot arch rv" type="button" data-i="4"><img src="assets/img/skyline-walk.jpg" alt="Revanth and Sravani walking with the Toronto skyline behind them" width="1400" height="2100" loading="lazy"></button>
-        <button class="shot rv" type="button" data-i="5"><img src="assets/img/ring.jpg" alt="Close-up of Sravani's engagement ring and their hands" width="1400" height="2100" loading="lazy"></button>
+      <div class="moments" id="moments">
+        <button class="shot a rv" type="button" aria-label="View photo 1"><img src="assets/img/bridge-walk.jpg" style="object-position:55% 45%" alt="Revanth and Sravani walking across a wooden bridge, Sravani in a pink saree" width="1400" height="2099" loading="lazy"></button>
+        <button class="shot b rv" style="--d:1" type="button" aria-label="View photo 2"><img src="assets/img/golden-hour.jpg" style="object-position:50% 28%" alt="Revanth and Sravani embracing in golden evening light" width="1400" height="1867" loading="lazy"></button>
+        <button class="shot c rv" style="--d:2" type="button" aria-label="View photo 3"><img src="assets/img/coffee-date.jpg" style="object-position:55% 42%" alt="Revanth and Sravani sitting together with coffee downtown" width="1400" height="2100" loading="lazy"></button>
+        <button class="shot d rv" style="--d:3" type="button" aria-label="View photo 4"><img src="assets/img/golden-walk.jpg" style="object-position:45% 32%" alt="Revanth and Sravani walking hand in hand by the lake at sunset" width="1400" height="2100" loading="lazy"></button>
+        <button class="shot e rv" style="--d:4" type="button" aria-label="View photo 5"><img src="assets/img/king-station.jpg" style="object-position:50% 58%" alt="Revanth and Sravani on the stairs of King subway station" width="1400" height="2100" loading="lazy"></button>
       </div>
+      <div class="dots" id="dots" aria-hidden="true"></div>
+      <p class="swipe">Swipe to see more</p>
     </div>
   </section>
 
@@ -542,6 +559,19 @@ section{position:relative}
       else if (e.key === 'ArrowLeft') show(cur - 1);
     } else if (!gate.classList.contains('opening') && (e.key === 'Enter' || e.key === ' ') && document.activeElement === document.body) openGate();
   });
+  /* carousel dots (phone layout) */
+  const strip = document.getElementById('moments'), dots = document.getElementById('dots');
+  shots.forEach(() => dots.appendChild(document.createElement('i')));
+  const dotEls = [...dots.children];
+  function markDot() {
+    const mid = strip.scrollLeft + strip.clientWidth / 2;
+    let best = 0, bd = Infinity;
+    shots.forEach((s, i) => { const d = Math.abs(s.offsetLeft + s.offsetWidth / 2 - mid); if (d < bd) { bd = d; best = i; } });
+    dotEls.forEach((d, i) => d.classList.toggle('on', i === best));
+  }
+  strip.addEventListener('scroll', () => requestAnimationFrame(markDot), { passive: true });
+  markDot();
+
   let sx = null;
   lb.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
   lb.addEventListener('touchend', e => {
