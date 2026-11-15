@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Revanth &amp; Sravani · Wedding Invitation</title>
-<meta name="description" content="Haldi 16 Dec · Wedding 18 Dec at Annavaram · Reception 21 Dec at Malkipuram. With love, Revanth &amp; Sravani.">
+<meta name="description" content="Haldi 16 Dec · Wedding 18 Dec from 7 PM at Annavaram, Muhurtham 19 Dec 4:38 AM · Reception 21 Dec at Malkipuram. With love, Revanth &amp; Sravani.">
 <meta name="theme-color" content="#5A0E1C">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Revanth &amp; Sravani · Wedding Invitation">
-<meta property="og:description" content="Haldi 16 Dec · Wedding 18 Dec, Annavaram · Reception 21 Dec, Malkipuram">
+<meta property="og:description" content="Haldi 16 Dec · Wedding 18 Dec from 7 PM, Annavaram (Muhurtham 19 Dec, 4:38 AM) · Reception 21 Dec, Malkipuram">
 <meta property="og:url" content="https://rt5447.github.io/revanth-sravani-wedding/">
 <meta property="og:image" content="https://rt5447.github.io/revanth-sravani-wedding/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -142,6 +142,15 @@ section{position:relative}
 .sd-place{font-style:italic;font-size:clamp(30px,4.6vw,42px);line-height:1.1}
 .sd-venue{font-size:18px;color:var(--cream);opacity:.88}
 .sd-text .btns{margin-top:18px}
+.sd-times{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;max-width:440px;margin-top:20px;border-block:1px solid rgba(230,194,122,.55)}
+.sd-times > div{display:flex;flex-direction:column;gap:2px;padding:14px 12px}
+.sd-times > div + div{border-left:1px solid rgba(230,194,122,.55)}
+.sd-times .caps{font-size:10px;letter-spacing:.18em;color:var(--gold-l)}
+.sd-times b{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,34px);line-height:1.1;color:var(--cream);font-variant-numeric:lining-nums}
+.sd-times span{font-size:16px;font-style:italic;opacity:.85}
+.ev .times{display:flex;flex-direction:column;gap:6px;width:100%;margin-top:14px;padding-top:14px;border-top:1px solid rgba(230,194,122,.4)}
+.ev .times p{display:flex;flex-direction:column;align-items:center;gap:0;font-size:20px;font-weight:600;line-height:1.25}
+.ev .times .caps{font-size:10px;letter-spacing:.18em;font-weight:600;color:var(--gold-l)}
 
 /* buttons */
 .btns{display:flex;flex-wrap:wrap;gap:10px}
@@ -362,9 +371,13 @@ section{position:relative}
         <p class="te rv" style="--d:3">వివాహ మహోత్సవం</p>
         <p class="sd-place rv" style="--d:4">Satyadeva Residency</p>
         <p class="sd-venue rv" style="--d:4">Annavaram, Kakinada District</p>
-        <div class="btns rv" style="--d:5">
+        <div class="sd-times rv" style="--d:5">
+          <div><p class="caps">Celebrations begin</p><b>7 PM onwards</b><span>Friday, 18 December</span></div>
+          <div><p class="caps">Muhurtham</p><b>4:38 AM</b><span>Saturday, 19 December</span></div>
+        </div>
+        <div class="btns rv" style="--d:6">
           <a class="btn solid" href="https://maps.app.goo.gl/itBQqtUCviKfUXFi6" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#pin"/></svg>Directions</a>
-          <a class="btn ghost" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Revanth%20%26%20Sravani%20Wedding&amp;dates=20261218/20261219&amp;location=Satyadeva%20Residency%2C%20Annavaram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#cal"/></svg>Add to calendar</a>
+          <a class="btn ghost" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Revanth%20%26%20Sravani%20Wedding&amp;dates=20261218T133000Z/20261218T233000Z&amp;details=Celebrations%20begin%207%20PM%20on%2018%20Dec.%20Muhurtham%204%3A38%20AM%20on%2019%20Dec.&amp;location=Satyadeva%20Residency%2C%20Annavaram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#cal"/></svg>Add to calendar</a>
         </div>
       </div>
     </div>
@@ -402,6 +415,10 @@ section{position:relative}
           <h3>Wedding</h3>
           <p class="venue">Satyadeva Residency</p>
           <p class="town">Annavaram</p>
+          <div class="times">
+            <p><span class="caps">Celebrations begin</span>18 Dec · 7 PM onwards</p>
+            <p><span class="caps">Muhurtham</span>19 Dec · 4:38 AM</p>
+          </div>
           <div class="btns">
             <a class="btn solid" href="https://maps.app.goo.gl/itBQqtUCviKfUXFi6" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#pin"/></svg>Directions</a>
           </div>
