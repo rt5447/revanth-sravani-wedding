@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://rt5447.github.io/revanth-sravani-wedding/">
 <meta property="og:image" content="https://rt5447.github.io/revanth-sravani-wedding/og.jpg">
 <meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:height" content="1200">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%235A0E1C'/%3E%3Ccircle cx='32' cy='32' r='25' fill='none' stroke='%23E6C27A' stroke-width='2'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='24' font-style='italic' text-anchor='middle' fill='%23E6C27A'%3ER%26amp;S%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,20 +87,31 @@ a{color:inherit}
 .gate.gone{display:none}
 
 /* ---------- hero ---------- */
-.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center;color:var(--cream);overflow:hidden;background:var(--maroon-d)}
-.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 55%;transform:scale(1.06);animation:drift 18s ease-out forwards}
+.hero{position:relative;min-height:100svh;display:flex;color:var(--cream);overflow:hidden;background:var(--maroon-d)}
+.hero-photo{position:absolute;inset:0;overflow:hidden}
+.hero-img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transform:scale(1.06);animation:drift 18s ease-out forwards}
 @keyframes drift{to{transform:scale(1)}}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,6,12,.72) 0%,rgba(40,6,12,.25) 38%,rgba(40,6,12,.15) 55%,rgba(30,4,9,.82) 100%)}
-.hero > *{position:relative;z-index:1}
-.hero-top{padding-top:calc(env(safe-area-inset-top,0px) + 28px);display:flex;flex-direction:column;align-items:center;gap:10px}
-.hero-top .te{font-size:clamp(17px,2.6vw,22px);color:var(--gold-l)}
-.hero-names{display:flex;flex-direction:column;align-items:center;gap:0;margin-top:8px}
-.hero-names .script{font-size:clamp(72px,17vw,150px);color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.35)}
-.hero-names .amp{font-family:var(--display);font-style:italic;font-size:clamp(30px,6vw,48px);color:var(--gold-l);margin:-6px 0 -2px}
-.hero-bottom{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 28px);display:flex;flex-direction:column;align-items:center;gap:8px}
-.hero-bottom .caps{font-size:13px;color:var(--gold-l)}
-.hero-date{font-family:var(--caps);font-weight:500;font-size:clamp(26px,5vw,38px);letter-spacing:.18em}
-.hero-place{font-style:italic;font-size:clamp(22px,4vw,30px)}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,6,12,.85) 0%,rgba(40,6,12,.5) 20%,rgba(40,6,12,0) 34%,rgba(40,6,12,0) 68%,rgba(30,4,9,.6) 80%,rgba(30,4,9,.9) 100%)}
+.hero-copy{position:relative;z-index:1;flex:1;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center;padding:calc(env(safe-area-inset-top,0px) + 24px) var(--gutter-r) calc(env(safe-area-inset-bottom,0px) + 20px) var(--gutter)}
+.hero-top{display:flex;flex-direction:column;align-items:center;gap:4px}
+.hero-top .te{font-size:clamp(15px,2.4vw,20px);color:var(--gold-l)}
+.hero-names{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;column-gap:.2em;line-height:1.1;margin-top:2px}
+.hero-names .script{font-size:clamp(46px,12.5vw,84px);color:#fff;text-shadow:0 3px 24px rgba(0,0,0,.45)}
+.hero-names .amp{font-family:var(--script);font-size:clamp(38px,10vw,68px);color:var(--gold-l)}
+.hero-top .getting{font-size:12px;color:var(--gold-l)}
+.hero-bottom{display:flex;flex-direction:column;align-items:center;gap:2px}
+.hero-date{font-family:var(--caps);font-weight:500;font-size:clamp(24px,5vw,36px);letter-spacing:.18em}
+.hero-place{font-style:italic;font-size:clamp(20px,4vw,28px)}
+@media (min-width:900px) and (min-aspect-ratio:1/1){
+  .hero{align-items:center;gap:4vw;background:radial-gradient(70% 90% at 30% 50%,#6b1424 0%,var(--maroon) 50%,var(--maroon-d) 100%);padding:clamp(40px,7vh,80px) max(56px,7vw)}
+  .hero::before{content:"";position:absolute;inset:22px;border:1px solid rgba(230,194,122,.4);pointer-events:none}
+  .hero-photo{position:relative;inset:auto;order:2;flex:0 0 auto;height:min(82svh,760px);aspect-ratio:2/3;border-radius:999px 999px 20px 20px;box-shadow:0 0 0 1px var(--gold-l),0 0 0 12px var(--maroon),0 0 0 13px rgba(230,194,122,.5),0 30px 60px -20px rgba(0,0,0,.6)}
+  .hero-photo::after{display:none}
+  .hero-copy{order:1;min-height:0;flex:1;justify-content:center;gap:44px;padding:0}
+  .hero-names{flex-direction:column;align-items:center}
+  .hero-names .script{font-size:clamp(84px,8vw,130px)}
+  .hero-names .amp{font-size:clamp(48px,4.4vw,70px);margin:-.2em 0}
+}
 .cue{margin-top:14px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(247,234,208,.6);display:grid;place-items:center;text-decoration:none}
 .cue svg{width:18px;height:18px;animation:bob 1.8s ease-in-out infinite}
 @keyframes bob{50%{transform:translateY(4px)}}
@@ -202,7 +213,8 @@ section{position:relative}
 .shot.b{grid-column:3;grid-row:1/3}
 .shot.c{grid-column:4;grid-row:1}
 .shot.d{grid-column:3;grid-row:3}
-.shot.e{grid-column:4;grid-row:2/4}
+.shot.e{grid-column:4;grid-row:2}
+.shot.f{grid-column:4;grid-row:3}
 .dots{display:none}
 
 /* lightbox */
@@ -247,7 +259,7 @@ section{position:relative}
   .moments{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin-left:calc(-1 * var(--gutter));margin-right:calc(-1 * var(--gutter-r));padding:4px var(--gutter-r) 18px var(--gutter);scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .moments::-webkit-scrollbar{display:none}
   .shot{flex:0 0 76%;max-width:340px;aspect-ratio:3/4;height:auto;scroll-snap-align:center;grid-column:auto;grid-row:auto}
-  .shot.b,.shot.c,.shot.d,.shot.e{grid-column:auto;grid-row:auto}
+  .shot.b,.shot.c,.shot.d,.shot.e,.shot.f{grid-column:auto;grid-row:auto}
   .dots{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:6px}
   .dots i{width:7px;height:7px;border-radius:50%;background:var(--line);transition:width .3s,background .3s}
   .dots i.on{width:22px;border-radius:4px;background:var(--maroon)}
@@ -331,21 +343,22 @@ section{position:relative}
 <main>
   <!-- Hero -->
   <header class="hero">
-    <img class="hero-img" src="assets/img/hero.jpg" alt="Revanth and Sravani walking hand in hand along the Toronto waterfront" width="1717" height="2576" fetchpriority="high">
-    <div class="hero-top wrap">
+    <div class="hero-photo"><img class="hero-img" src="assets/img/hero.jpg" alt="Revanth and Sravani together, Sravani in a pink silk saree" width="1400" height="2099" fetchpriority="high"></div>
+    <div class="hero-copy">
+    <div class="hero-top">
       <p class="te">శ్రీరస్తు · శుభమస్తు · అవిఘ్నమస్తు</p>
-      <p class="caps" style="font-size:12px;color:var(--cream)">Together with our families</p>
+      <h1 class="hero-names">
+        <span class="script">Revanth</span>
+        <span class="amp">&amp;</span>
+        <span class="script">Sravani</span>
+      </h1>
+      <p class="caps getting">are getting married</p>
     </div>
-    <h1 class="hero-names">
-      <span class="script">Revanth</span>
-      <span class="amp">&amp;</span>
-      <span class="script">Sravani</span>
-    </h1>
-    <div class="hero-bottom wrap">
-      <p class="caps">are getting married</p>
+    <div class="hero-bottom">
       <p class="hero-date">18 · 12 · 2026</p>
       <p class="hero-place">Annavaram, Andhra Pradesh</p>
       <a class="cue" href="#invite" aria-label="Scroll to the invitation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#down"/></svg></a>
+    </div>
     </div>
   </header>
 
@@ -479,7 +492,8 @@ section{position:relative}
         <button class="shot b rv" style="--d:1" type="button" aria-label="View photo 2"><img src="assets/img/golden-hour.jpg" style="object-position:50% 28%" alt="Revanth and Sravani embracing in golden evening light" width="1400" height="1867" loading="lazy"></button>
         <button class="shot c rv" style="--d:2" type="button" aria-label="View photo 3"><img src="assets/img/coffee-date.jpg" style="object-position:55% 42%" alt="Revanth and Sravani sitting together with coffee downtown" width="1400" height="2100" loading="lazy"></button>
         <button class="shot d rv" style="--d:3" type="button" aria-label="View photo 4"><img src="assets/img/golden-walk.jpg" style="object-position:45% 32%" alt="Revanth and Sravani walking hand in hand by the lake at sunset" width="1400" height="2100" loading="lazy"></button>
-        <button class="shot e rv" style="--d:4" type="button" aria-label="View photo 5"><img src="assets/img/king-station.jpg" style="object-position:50% 58%" alt="Revanth and Sravani on the stairs of King subway station" width="1400" height="2100" loading="lazy"></button>
+        <button class="shot e rv" style="--d:4" type="button" aria-label="View photo 5"><img src="assets/img/king-station.jpg" style="object-position:50% 52%" alt="Revanth and Sravani on the stairs of King subway station" width="1400" height="2100" loading="lazy"></button>
+        <button class="shot f rv" style="--d:5" type="button" aria-label="View photo 6"><img src="assets/img/skyline-walk.jpg" style="object-position:72% 76%" alt="Revanth and Sravani walking with the Toronto skyline behind them" width="1400" height="2100" loading="lazy"></button>
       </div>
       <div class="dots" id="dots" aria-hidden="true"></div>
       <p class="swipe">Swipe to see more</p>
